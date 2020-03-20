@@ -21,7 +21,8 @@ tags:
 
 # 示例
 ## 源代码
-```const client = require("./scp.js");
+```
+const client = require("./scp.js");
 const fs = require("fs");
 const { resolve } = require("path");
 const zlib = require("zlib");
@@ -55,11 +56,12 @@ class cdScp {
 }
 
 module.exports = cdScp;
-
 ```
+
 ## 使用方法
 需要在webpack的plugins属性配置
 ### 通过账号密码连接
+
 ```
 new cdScp({
       path: resolve(__dirname, "../dist/"), //需上传路径（可以和output保持一致）
@@ -72,7 +74,9 @@ new cdScp({
       }
     })
 ```
+
 ### 通过私钥
+
 ```
 new cdScp({
       path: resolve(__dirname, "../dist/"), //需上传路径（可以和output保持一致）
@@ -85,6 +89,7 @@ new cdScp({
         path: "~"}
     })
 ```
+
 # 结语
 因为依赖的库（scp.js）是用基于sftp，请确认服务器是否支持，很多公司会禁用sftp上传，所以如果需要用到此插件，需要靠其他手段，例如接口上传等等；
 目前该插件已上传到npm，可以直接install使用：[cdScp--npm](https://www.npmjs.com/package/cd-scp),[cdScp--github](https://github.com/CDzhou/cd-scp)
